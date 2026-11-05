@@ -78,7 +78,7 @@ const STEPS: Step[] = [
     label: "07 / OBJETIVO",
     title: "Qual o seu objetivo nos próximos 2 meses?",
     key: "objetivo",
-    options: ["Mais clientes", "Mais contatos qualificados", "Entrar em nova região", "Fortalecer a marca"],
+    options: ["Mais clientes", "Mais contatos", "Entrar em nova região", "Fortalecer a marca"],
   },
   {
     kind: "choice",
