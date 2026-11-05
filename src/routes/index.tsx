@@ -151,7 +151,7 @@ function LandingPage() {
           </h1>
           <p style={{ fontSize: "clamp(15px, 4vw, 16px)", lineHeight: 1.5, color: MUTED, margin: "0 0 24px" }}>
             Com a Scase, sua marca aparece para quem está comprando agora, não depois do Natal. Dois meses de tráfego
-            pago, sem contrato.
+            pago, <strong style={{ color: "#f4f4f4", fontWeight: 800 }}>sem contrato</strong>.
           </p>
           <a
             href="#form"
