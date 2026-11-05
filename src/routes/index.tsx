@@ -132,13 +132,13 @@ function LandingPage() {
   return (
     <div style={{ background: BG, color: "#f4f4f4", minHeight: "100vh", fontFamily: "Archivo, 'Helvetica Neue', Arial, sans-serif" }}>
       <div style={{ maxWidth: 680, margin: "0 auto" }}>
-        <header style={{ padding: "16px 28px", borderBottom: `1px solid ${LINE}` }}>
+        <header style={{ padding: "16px clamp(16px, 5vw, 28px)", borderBottom: `1px solid ${LINE}` }}>
           <img src="/logo-branca.png" alt="Scase" style={{ height: 44, width: "auto" }} />
         </header>
 
         <section
           style={{
-            padding: "48px 28px 40px",
+            padding: "clamp(32px, 8vw, 48px) clamp(16px, 5vw, 28px) clamp(28px, 7vw, 40px)",
             position: "relative",
             background: `linear-gradient(180deg, rgba(11,11,11,0.25) 0%, rgba(11,11,11,0.6) 70%, ${BG} 100%), url(/fundo-crise.jpg) center 30% / cover no-repeat`,
           }}
@@ -146,10 +146,10 @@ function LandingPage() {
           <div style={{ fontFamily: MONO, fontSize: 12, color: ACCENT, letterSpacing: 2, marginBottom: 16 }}>
             FIM DE ANO É A HORA DE VENDER
           </div>
-          <h1 style={{ fontSize: 40, lineHeight: 1.05, fontWeight: 800, letterSpacing: -1, margin: "0 0 18px", textWrap: "balance" }}>
+          <h1 style={{ fontSize: "clamp(30px, 8vw, 40px)", lineHeight: 1.05, fontWeight: 800, letterSpacing: -1, margin: "0 0 18px", textWrap: "balance" }}>
             Ou você aumenta suas vendas nesse final de ano, ou sua empresa vai falir.
           </h1>
-          <p style={{ fontSize: 16, lineHeight: 1.5, color: MUTED, margin: "0 0 24px" }}>
+          <p style={{ fontSize: "clamp(15px, 4vw, 16px)", lineHeight: 1.5, color: MUTED, margin: "0 0 24px" }}>
             Com a Scase, sua marca aparece para quem está comprando agora, não depois do Natal. Dois meses de tráfego
             pago, sem contrato.
           </p>
@@ -161,7 +161,7 @@ function LandingPage() {
               color: "#0b0b0b",
               fontWeight: 800,
               fontSize: 15,
-              padding: "16px 30px",
+              padding: "16px clamp(20px, 6vw, 30px)", maxWidth: "100%", textAlign: "center",
               borderRadius: 999,
               textDecoration: "none",
             }}
@@ -171,7 +171,7 @@ function LandingPage() {
         </section>
 
         {screen === "form" && (
-          <section id="form" style={{ padding: "40px 28px", borderTop: `1px solid ${LINE}`, background: PANEL }}>
+          <section id="form" style={{ padding: "clamp(28px, 7vw, 40px) clamp(16px, 5vw, 28px)", borderTop: `1px solid ${LINE}`, background: PANEL }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
               <span style={{ fontFamily: MONO, fontSize: 11, color: "#8a8a8a" }}>
                 {String(idx + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
@@ -182,7 +182,7 @@ function LandingPage() {
             </div>
 
             <div style={{ fontFamily: MONO, fontSize: 12, color: ACCENT, letterSpacing: 2, marginBottom: 12 }}>{step.label}</div>
-            <h2 style={{ fontSize: 30, fontWeight: 800, lineHeight: 1.1, margin: "0 0 22px", textWrap: "balance" }}>
+            <h2 style={{ fontSize: "clamp(24px, 6.5vw, 30px)", fontWeight: 800, lineHeight: 1.1, margin: "0 0 22px", textWrap: "balance" }}>
               {step.title}
             </h2>
 
@@ -240,12 +240,12 @@ function LandingPage() {
         )}
 
         {screen === "schedule" && (
-          <section style={{ padding: "40px 28px", borderTop: `1px solid ${LINE}` }}>
+          <section style={{ padding: "clamp(28px, 7vw, 40px) clamp(16px, 5vw, 28px)", borderTop: `1px solid ${LINE}` }}>
             <div style={{ fontFamily: MONO, fontSize: 12, color: ACCENT, letterSpacing: 2, marginBottom: 12 }}>ÚLTIMO PASSO</div>
-            <h2 style={{ fontSize: 30, fontWeight: 800, lineHeight: 1.1, margin: "0 0 20px", textWrap: "balance" }}>
+            <h2 style={{ fontSize: "clamp(24px, 6.5vw, 30px)", fontWeight: 800, lineHeight: 1.1, margin: "0 0 20px", textWrap: "balance" }}>
               Escolha o melhor horário para falar com o time.
             </h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 8, marginBottom: 24 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(72px, 1fr))", gap: 8, marginBottom: 24 }}>
               {TIME_SLOTS.map((s) => {
                 const on = slot === s;
                 return (
@@ -276,8 +276,8 @@ function LandingPage() {
         )}
 
         {screen === "disqualified" && (
-          <section style={{ padding: "40px 28px", borderTop: `1px solid ${LINE}` }}>
-            <h2 style={{ fontSize: 26, fontWeight: 800, lineHeight: 1.15, margin: "0 0 12px" }}>
+          <section style={{ padding: "clamp(28px, 7vw, 40px) clamp(16px, 5vw, 28px)", borderTop: `1px solid ${LINE}` }}>
+            <h2 style={{ fontSize: "clamp(22px, 6vw, 26px)", fontWeight: 800, lineHeight: 1.15, margin: "0 0 12px" }}>
               Por enquanto, vamos te enviar conteúdo gratuito.
             </h2>
             <p style={{ fontSize: 15, color: MUTED, margin: 0 }}>
@@ -289,7 +289,7 @@ function LandingPage() {
 
         <footer
           style={{
-            padding: "18px 28px",
+            padding: "18px clamp(16px, 5vw, 28px)",
             borderTop: `1px solid ${LINE}`,
             fontFamily: MONO,
             fontSize: 11,
@@ -337,7 +337,7 @@ const primaryButtonStyle: CSSProperties = {
   color: "#0b0b0b",
   fontWeight: 800,
   fontSize: 15,
-  padding: "16px 34px",
+  padding: "16px clamp(24px, 8vw, 34px)", maxWidth: "100%",
   borderRadius: 999,
   border: 0,
   cursor: "pointer",
